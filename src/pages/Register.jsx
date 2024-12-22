@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
 import registerAnimationData from '../assets/lottie/register.json'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../context/AuthContext';
 
 const Register = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [error, setError] = useState({});
+
+    const {createUser} = useContext(AuthContext)
     const handleSubmit = e =>{
         e.preventDefault()
         const form = e.target 
@@ -34,6 +37,14 @@ const Register = () => {
 
         // Clear errors if validation passes
         setError({});
+
+        createUser(email,password)
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error.message)
+        })
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
