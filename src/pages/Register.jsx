@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
 import registerAnimationData from '../assets/lottie/register.json'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 
 const Register = () => {
@@ -140,7 +140,7 @@ const Register = () => {
                     <p className="text-center text-gray-500 mt-4">
                         Already have an account?
                         <span className="text-red-500">
-                            <Link to="/login"> Login</Link>
+                            <NavLink to="/login"> Login</NavLink>
                         </span>
                     </p>
                 </form>
