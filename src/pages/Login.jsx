@@ -1,16 +1,27 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import Lottie from 'lottie-react';
 import loginAnimationData from '../assets/lottie/login.json'
 import { Link } from 'react-router-dom';
+import AuthContext from '../context/AuthContext';
+
 
 const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const {logInUser} = useContext(AuthContext)
     const handleLogin = e => {
         e.preventDefault()
         const form = e.target
         const email = form.email.value;
         const password = form.password.value;
+
+        logInUser(email,password)
+        .then(result=>{
+            console.log('login',result.user)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     }
         return (
             <div className="hero bg-base-200 min-h-screen">
