@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout";
 import ErrorPage from "../pages/ErrorPage";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Blog from "../pages/Blog";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
         {
             path:'/login',
             element:<Login></Login>
-        }
+        },
+        {
+          path:'/blog',
+          element:<Blog></Blog>
+       },
+
       ]
     },
   ]);

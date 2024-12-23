@@ -11,14 +11,14 @@ const AboutUs = () => {
 
     return (
         <motion.div
-            className="md:flex justify-between items-center bg-gray-100 p-8 rounded-lg shadow-lg max-w-5xl mx-auto my-10"
+            className="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-8 rounded-lg shadow-lg max-w-5xl mx-auto my-10"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {/* Left Section */}
-            <div className="md:w-1/2 pr-4">
+            <div className="w-full md:w-1/2 pr-2 mr-10 mb-6 md:mb-0">
                 <motion.h2
                     className="text-3xl font-bold text-gray-800 mb-4"
                     animate={{
@@ -58,24 +58,22 @@ const AboutUs = () => {
             </div>
 
             {/* Right Section (Images with Animation) */}
-            <div className="md:w-1/2 pl-4 relative">
-                {/* Image 1: Comes from top-left */}
+            <div className="w-full md:w-1/2 pl-4">
+                {/* Image 1: Comes from y-axis */}
                 <motion.img
-                    src="image1.jpg" 
+                    src="https://i.ibb.co.com/pL9737L/132556.jpg"
                     alt="Image 1"
-                    className="w-1/2 mb-4 absolute"
-                    initial={{ x: "-100%", y: "-100%" }} // Off-screen top-left
-                    animate={{ x: 0, y: 0 }} // Move to center position
-                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="w-full md:w-1/2 mb-4 h-32 rounded-t-3xl rounded-br-3xl"
+                    animate={{ y: [-10, 50, -10] }} // Move to center position
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeOut" }}
                 />
-                {/* Image 2: Comes from bottom-right */}
+                {/* Image 2: Comes from x-axis */}
                 <motion.img
-                    src="image2.jpg" 
+                    src="https://i.ibb.co.com/cQQst7X/2160.jpg"
                     alt="Image 2"
-                    className="w-1/2 absolute"
-                    initial={{ x: "100%", y: "100%" }} // Off-screen bottom-right
-                    animate={{ x: 0, y: 0 }} // Move to center position
-                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="w-full md:w-1/2 h-32 rounded-t-3xl rounded-bl-3xl"
+                    animate={{ x: [0, 60, 0] }} // Move to center position
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeOut" }}
                 />
             </div>
         </motion.div>
