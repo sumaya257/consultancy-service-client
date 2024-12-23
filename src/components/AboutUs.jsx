@@ -11,7 +11,7 @@ const AboutUs = () => {
 
     return (
         <motion.div
-            className="flex flex-col md:flex-row justify-between items-center bg-gray-100 p-8 rounded-lg shadow-lg max-w-5xl mx-auto my-10"
+            className="flex flex-col md:flex-row justify-between items-center  p-8 rounded-lg shadow-lg max-w-5xl mx-auto my-10bg-white dark:bg-gray-900 text-black dark:text-white my-10"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}

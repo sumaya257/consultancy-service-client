@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Blog = () => {
     return (
         <motion.div
-            className="bg-gray-100 py-16 px-8"
+            className="bg-gray-100 py-16 px-8 dark:bg-gray-900 text-black dark:text-white"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
