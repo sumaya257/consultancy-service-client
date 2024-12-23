@@ -23,7 +23,7 @@ const Navbar = () => {
             {/* Navbar Start */}
             <div className="navbar-start">
                 {/* Mobile Dropdown Menu */}
-                <div className="dropdown lg:hidden">
+                <div className="dropdown md:hidden">
                     <label tabIndex={0} className="btn btn-ghost">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,24 @@ const Navbar = () => {
                                         </li>
                                     </ul>
                                 </details>
+                                {/* Logout Button */}
+                                <li>
+                                    <button onClick={handleLogOut} className="btn btn-error w-full text-left">
+                                        Logout
+                                    </button>
+                                </li>
                             </li>
+                        )}
+                        {/* Add Register/Login for Small Devices */}
+                        {!user && (
+                            <>
+                                <li>
+                                    <NavLink to="/register">Register</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/login">Login</NavLink>
+                                </li>
+                            </>
                         )}
                     </ul>
                 </div>
@@ -82,7 +99,7 @@ const Navbar = () => {
             </div>
 
             {/* Navbar Center (Desktop Menu) */}
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-center hidden md:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li>
                         <NavLink to="/">Home</NavLink>
@@ -116,7 +133,7 @@ const Navbar = () => {
             </div>
 
             {/* Navbar End (Login/Register or Logout) */}
-            <div className="navbar-end flex items-center gap-4">
+            <div className="navbar-end  items-center gap-4 hidden md:flex">
                 {user ? (
                     <div className="flex items-center gap-2">
                         <img
@@ -141,6 +158,7 @@ const Navbar = () => {
                 )}
             </div>
         </div>
+
     );
 };
 
