@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Blog from "../pages/Blog";
 import AddService from "../pages/AddService";
+import ManageService from "../pages/ManageService";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
        {
         path:'/add-service',
         element:<AddService></AddService>
+      },
+      {
+        path:'/manage-service',
+        element:<ManageService></ManageService>
       },
 
 
