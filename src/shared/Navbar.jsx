@@ -69,7 +69,6 @@ const Navbar = () => {
                                         </li>
                                     </ul>
                                 </details>
-                                {/* Logout Button */}
                                 <li>
                                     <button onClick={handleLogOut} className="btn btn-error w-full text-left">
                                         Logout
@@ -77,7 +76,6 @@ const Navbar = () => {
                                 </li>
                             </li>
                         )}
-                        {/* Add Register/Login for Small Devices */}
                         {!user && (
                             <>
                                 <li>
@@ -98,7 +96,7 @@ const Navbar = () => {
                 </NavLink>
             </div>
 
-            {/* Navbar Center (Desktop Menu) */}
+            {/* Navbar Center */}
             <div className="navbar-center hidden md:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li>
@@ -132,15 +130,17 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            {/* Navbar End (Login/Register or Logout) */}
-            <div className="navbar-end  items-center gap-4 hidden md:flex">
+            {/* Navbar End */}
+            <div className="navbar-end items-center gap-4 hidden md:flex">
                 {user ? (
                     <div className="flex items-center gap-2">
+                        {/* User Profile Picture */}
                         <img
                             src={user.photoURL || 'https://via.placeholder.com/40'}
                             alt="User Avatar"
                             className="w-10 h-10 rounded-full"
                         />
+                        {/* User Name */}
                         <span>{user.displayName || 'User'}</span>
                         <button onClick={handleLogOut} className="btn btn-error">
                             Logout
@@ -158,7 +158,6 @@ const Navbar = () => {
                 )}
             </div>
         </div>
-
     );
 };
 

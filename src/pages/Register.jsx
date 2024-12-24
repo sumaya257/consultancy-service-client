@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
 import registerAnimationData from '../assets/lottie/register.json'
 import { useState } from 'react';
-import {NavLink } from 'react-router-dom';
+import {NavLink, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 
 const Register = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [error, setError] = useState({});
-
-    const {createUser} = useContext(AuthContext)
+    const {createUser,setUser,updateUserProfile} = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleSubmit = e =>{
         e.preventDefault()
         const form = e.target 
@@ -38,14 +38,26 @@ const Register = () => {
         // Clear errors if validation passes
         setError({});
 
-        createUser(email,password)
-        .then(result=>{
-            console.log(result)
+        createUser(email, password)
+        .then((result) => {
+            const user = result.user;
+            setUser(user);
+            console.log('User registered successfully:', user);
+            updateUserProfile({
+                displayName: name, photoURL: photo
+            }).then(
+                () => {
+                    navigate('/')
+                }
+            )
         })
-        .catch(error=>{
-            console.log(error.message)
-        })
-    }
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error('Registration error:', errorCode, errorMessage);
+            setError({ general: errorMessage });
+        });
+};
     return (
         <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 text-black dark:text-white">
             <div className="hero-content flex-col lg:flex-row-reverse">
