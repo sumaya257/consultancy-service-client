@@ -103,7 +103,7 @@ const Navbar = () => {
                         <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/services">Services</NavLink>
+                        <NavLink to="/all-services">Services</NavLink>
                     </li>
                     {user && (
                         <li tabIndex={0} className="dropdown dropdown-hover">

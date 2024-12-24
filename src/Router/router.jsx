@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Blog from "../pages/Blog";
 import AddService from "../pages/AddService";
 import ManageService from "../pages/ManageService";
+import AllServices from "../components/AllServices";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         path:'/manage-service',
         element:<ManageService></ManageService>
       },
+      {
+        path:'/all-services',
+        element:<AllServices></AllServices>
+      },
+
 
 
       ]

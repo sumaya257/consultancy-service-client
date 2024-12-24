@@ -46,7 +46,7 @@ const ManageService = () => {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center space-x-2">
+            <div className="flex justify-center items-center space-x-2 mt-44">
                 <div className="w-16 h-16 border-8 border-dashed border-blue-500 rounded-full animate-spin"></div>
                 <span className="text-xl">Loading...</span>
             </div>
@@ -108,6 +108,16 @@ const ManageService = () => {
                                 }
                             }}
                         >
+                            
+                            <input
+                                type="text"
+                                name="serviceName"
+                                defaultValue={editService.imageURL}
+                                className="w-full p-2 mb-4 border rounded"
+                                placeholder="Service Name"
+                                required
+                            />
+
                             <input
                                 type="text"
                                 name="serviceName"
@@ -116,19 +126,19 @@ const ManageService = () => {
                                 placeholder="Service Name"
                                 required
                             />
-                            <textarea
-                                name="description"
-                                defaultValue={editService.description}
-                                className="w-full p-2 mb-4 border rounded"
-                                placeholder="Description"
-                                required
-                            />
                             <input
                                 type="number"
                                 name="price"
                                 defaultValue={editService.price}
                                 className="w-full p-2 mb-4 border rounded"
                                 placeholder="Price"
+                                required
+                            />
+                              <textarea
+                                name="description"
+                                defaultValue={editService.description}
+                                className="w-full p-2 mb-4 border rounded"
+                                placeholder="Description"
                                 required
                             />
                             <div className="flex justify-end">

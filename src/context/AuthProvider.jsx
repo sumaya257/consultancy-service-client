@@ -16,6 +16,8 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [services, setServices] = useState([]); // State to store services data
+
 
     // Function to create a user with email and password
     const createUser = (email, password) => {
@@ -71,6 +73,23 @@ const AuthProvider = ({ children }) => {
         return () => unsubscribe(); // Clean up observer on component unmount
     }, []);
 
+
+    // Fetch services data from the API
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/services');
+                const data = await response.json();
+                setServices(data); // Set the services data to state
+            } catch (error) {
+                console.error('Error fetching services:', error);
+            }
+        };
+
+        fetchServices(); // Call the function to fetch services
+    }, []); // Empty dependency array ensures the call runs once when component mounts
+
+
     // Provide all auth-related functions and user state to the context
     const authInfo = {
         user,
@@ -82,6 +101,7 @@ const AuthProvider = ({ children }) => {
         logInWithGoogle,
         logOutUser,
         updateUserProfile,
+        services,
     };
 
     return (
