@@ -4,7 +4,7 @@ import axios from 'axios';
 import AuthContext from '../context/AuthContext';
 
 const AddService = () => {
-    const { user } = useContext(AuthContext); // Get user info from AuthContext
+    const { user,addService } = useContext(AuthContext); // Get user info from AuthContext
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,7 +42,8 @@ const AddService = () => {
                     text: 'Service has been added successfully!',
                     confirmButtonText: 'OK',
                 });
-
+                 // Update the context with the new service
+                 addService(response.data);
                 // Reset the form after successful submission
                 e.target.reset();
             })

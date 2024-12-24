@@ -89,6 +89,11 @@ const AuthProvider = ({ children }) => {
         fetchServices(); // Call the function to fetch services
     }, []); // Empty dependency array ensures the call runs once when component mounts
 
+      // Method to add a new service to the context
+      const addService = (newService) => {
+        setServices((prevServices) => [...prevServices, newService]);
+    };
+
 
     // Provide all auth-related functions and user state to the context
     const authInfo = {
@@ -102,6 +107,7 @@ const AuthProvider = ({ children }) => {
         logOutUser,
         updateUserProfile,
         services,
+        addService
     };
 
     return (
