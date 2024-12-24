@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
+import axios from 'axios';
+import AuthContext from '../context/AuthContext';
 
 const AddService = () => {
+    const { user } = useContext(AuthContext); // Get user info from AuthContext
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         // Extract form data as an object
         const formData = new FormData(e.target); // `e.target` is the form element
         const serviceData = Object.fromEntries(formData.entries());
-        console.log(serviceData)
+
+        // Add user info to the serviceData object
+        serviceData.serviceProviderPhoto = user.photoURL
+        serviceData.serviceProviderName = user.displayName;
+        serviceData.serviceProviderEmail = user.email;
 
         // Validation: Ensure all fields are filled
         for (const key in serviceData) {
@@ -22,31 +30,32 @@ const AddService = () => {
                 return;
             }
         }
+
+        // Send the data using Axios POST request
+        axios
+            .post('http://localhost:5000/add-service', serviceData)
+            .then((response) => {
+                console.log(response.data)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Service has been added successfully!',
+                    confirmButtonText: 'OK',
+                });
+
+                // Reset the form after successful submission
+                e.target.reset();
+            })
+            .catch((error) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'There was an error while adding the service.',
+                    confirmButtonText: 'OK',
+                });
+                console.error('Error adding service:', error);
+            });
     };
-     // Send the data using Axios POST request
-     axios
-     .post('/api/add-service', serviceData)  // Replace with your API endpoint
-     .then((response) => {
-         Swal.fire({
-             icon: 'success',
-             title: 'Success',
-             text: 'Service has been added successfully!',
-             confirmButtonText: 'OK',
-         });
-
-         // Reset the form after successful submission
-         e.target.reset();
-     })
-     .catch((error) => {
-         Swal.fire({
-             icon: 'error',
-             title: 'Error',
-             text: 'There was an error while adding the service.',
-             confirmButtonText: 'OK',
-         });
-         console.error('Error adding service:', error);
-     });
-
 
     return (
         <div className="p-8 max-w-5xl mx-auto shadow-lg my-10 border rounded-lg hover:border-blue-500 transition duration-300 ease-in-out">
