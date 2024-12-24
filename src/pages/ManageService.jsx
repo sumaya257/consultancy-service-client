@@ -32,12 +32,47 @@ const ManageService = () => {
         );
     }
 
-    return (
-        <div>
-            <h2>Manage Your Services</h2>
-            <div>{services.length} services found</div>
-        </div>
-    );
-};
-
+        return (
+            <div className="p-8 max-w-5xl mx-auto">
+                <h2 className="text-3xl font-bold mb-4">Manage Your Services</h2>
+    
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {services.map((service) => (
+                        <div key={service._id} className="card shadow-lg border rounded-lg p-4">
+                            <img src={service.imageURL} alt={service.serviceName} className="w-full h-40 object-cover mb-4" />
+                            <h3 className="text-xl font-semibold">{service.serviceName}</h3>
+                            <p>{service.description}</p>
+                            <p className="font-bold">Price: ${service.price}</p>
+                            <div className="flex justify-between mt-4">
+                                <button
+                                    className="btn btn-secondary"
+                                    // onClick={() => handleEdit(service)}
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    className="btn btn-danger"
+                                    // onClick={() => handleDelete(service._id)}
+                                >
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+    
+                {/* {showModal && (
+                    <Modal
+                        service={editService}
+                        onClose={() => setShowModal(false)}
+                        onSave={(updatedService) => {
+                            setServices(services.map(service => service._id === updatedService._id ? updatedService : service));
+                            setShowModal(false);
+                        }}
+                    />
+                )} */}
+            </div>
+        );
+    };
+    
 export default ManageService;
