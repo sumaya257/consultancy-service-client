@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 const ServiceDetails = () => {
     const { services } = useContext(AuthContext); // Get services from context
@@ -50,10 +51,12 @@ const ServiceDetails = () => {
 
                             <p className="text-xl font-bold mb-4">Price: ${service.price}</p>
 
-                            {/* Book Now Button */}
-                            <button className="bg-blue-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600">
-                                Book Now
-                            </button>
+                            {/* Book Now Button with Dynamic ID */}
+                            <Link to={`/book-now/${service._id}`}>
+                                <button className="bg-blue-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600">
+                                    Book Now
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 ))
@@ -61,5 +64,4 @@ const ServiceDetails = () => {
         </div>
     );
 };
-
 export default ServiceDetails;

@@ -9,6 +9,7 @@ import AddService from "../pages/AddService";
 import ManageService from "../pages/ManageService";
 import AllServices from "../components/AllServices";
 import ServiceDetails from "../pages/ServiceDetails";
+import BookNow from "../pages/BookNow";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path:'/services/:id',
         element:<ServiceDetails></ServiceDetails>
+      },
+      {
+        path:'/book-now/:id',
+        element:<BookNow></BookNow>
       },
 
 
