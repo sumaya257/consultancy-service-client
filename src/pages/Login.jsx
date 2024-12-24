@@ -4,9 +4,10 @@ import Lottie from 'lottie-react';
 import loginAnimationData from '../assets/lottie/login.json'
 import { NavLink, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
-
+import useTitle from '../customHooks/useTitle';
 
 const Login = () => {
+    useTitle('Login - Guideline Grove');
     const [passwordVisible, setPasswordVisible] = useState(false);
     const { logInUser, logInWithGoogle } = useContext(AuthContext)
     const navigate =useNavigate()
