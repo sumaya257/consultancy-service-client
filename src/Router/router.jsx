@@ -8,6 +8,7 @@ import Blog from "../pages/Blog";
 import AddService from "../pages/AddService";
 import ManageService from "../pages/ManageService";
 import AllServices from "../components/AllServices";
+import ServiceDetails from "../pages/ServiceDetails";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path:'/all-services',
         element:<AllServices></AllServices>
+      },
+      {
+        path:'/services/:id',
+        element:<ServiceDetails></ServiceDetails>
       },
 
 

@@ -2,8 +2,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
+import useTitle from '../customHooks/useTitle';
 
 const ManageService = () => {
+    useTitle('Manage Service-Guideline Grove');
     const [services, setServices] = useState([]);
     const [editService, setEditService] = useState(null);
     const [showEditModal, setShowEditModal] = useState(false);
@@ -111,7 +113,7 @@ const ManageService = () => {
                             
                             <input
                                 type="text"
-                                name="serviceName"
+                                name="imageURL"
                                 defaultValue={editService.imageURL}
                                 className="w-full p-2 mb-4 border rounded"
                                 placeholder="Service Name"

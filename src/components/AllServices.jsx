@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 const AllServices = () => {
     const { services } = useContext(AuthContext);
@@ -21,7 +22,10 @@ const AllServices = () => {
                                 <span className="text-sm text-gray-500">{service.serviceArea}</span>
                                 <span className="text-lg font-semibold">{`$${service.price}`}</span>
                             </div>
+                            <Link to={`/services/${service._id}`}>
                             <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">View Details</button>
+                            </Link>
+                            
                         </div>
                         {service.serviceProviderPhoto && (
                             <div className="provider-info flex items-center mt-4">
