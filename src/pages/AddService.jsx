@@ -4,7 +4,7 @@ import axios from 'axios';
 import AuthContext from '../context/AuthContext';
 
 const AddService = () => {
-    const { user,addService } = useContext(AuthContext); // Get user info from AuthContext
+    const { user } = useContext(AuthContext); // Get user info from AuthContext
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ const AddService = () => {
 
         // Send the data using Axios POST request
         axios
-            .post('http://localhost:5000/add-service', serviceData)
+            .post('http://localhost:5000/services', serviceData)
             .then((response) => {
                 console.log(response.data)
                 Swal.fire({
@@ -42,8 +42,6 @@ const AddService = () => {
                     text: 'Service has been added successfully!',
                     confirmButtonText: 'OK',
                 });
-                 // Update the context with the new service
-                 addService(response.data);
                 // Reset the form after successful submission
                 e.target.reset();
             })

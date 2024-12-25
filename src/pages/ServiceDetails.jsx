@@ -1,19 +1,23 @@
 import React, { useContext } from 'react';
-import AuthContext from '../context/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData,useParams } from 'react-router-dom';
+
 
 const ServiceDetails = () => {
-    const { services } = useContext(AuthContext); // Get services from context
+    const  services  = useLoaderData(); // Get services from context
+    const { id } = useParams();
+
+
+    // Find the specific service by ID
+    const service = services.find((service) => service._id === id);
 
     return (
         <div className="p-8 max-w-2xl mx-auto">
             {services.length === 0 ? (
                 <p>No services available</p>
             ) : (
-                services.map((service) => (
                     <div key={service._id} className="mb-8">
                         {/* Service Provider Information */}
-                        <div className="bg-gray-100 p-6 rounded-lg shadow-lg mb-6">
+                        <div className="bg-gray-100 p-6 rounded-lg shadow-lg mb-6 dark:text-black">
                             <h2 className="text-xl font-bold mb-4">Service Provider Information</h2>
                             <div className="flex items-center mb-4">
                                 <img
@@ -31,7 +35,7 @@ const ServiceDetails = () => {
                         </div>
 
                         {/* Single Service Section */}
-                        <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <div className="bg-white p-6 rounded-lg shadow-lg dark:text-black">
                             <h2 className="text-3xl font-bold mb-4">{service.serviceName}</h2>
                             <img
                                 src={service.imageURL}
@@ -58,8 +62,8 @@ const ServiceDetails = () => {
                                 </button>
                             </Link>
                         </div>
+                        <div className='mt-20'></div>
                     </div>
-                ))
             )}
         </div>
     );

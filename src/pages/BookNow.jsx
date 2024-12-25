@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const BookNow = () => {
   const { id } = useParams(); // Get the service id from URL
@@ -15,13 +17,6 @@ const BookNow = () => {
     specialInstructions: '',
   });
 
-  // Check if the service is found
-  useEffect(() => {
-    if (service) {
-      console.log('Service found:', service);
-    }
-  }, [service]);
-
   // Handle input changes for editable fields
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,12 +26,56 @@ const BookNow = () => {
     }));
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Booking Details:', formData);
-    // You can handle form submission here (e.g., send data to the backend)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    // Create a new FormData object
+    const formData = new FormData(event.target);
+  
+    // Convert FormData to an object
+    const data = Object.fromEntries(formData.entries());
+  
+    // Manually add non-editable fields to the data object
+    data.serviceID = service._id;
+    data.serviceName = service.serviceName;
+    data.serviceImage = service.imageURL;
+    data.servicePrice = service.price;
+    data.serviceProviderName = service.serviceProviderName;
+    data.serviceProviderEmail = service.serviceProviderEmail;
+    data.currentUserName = user?.displayName || "N/A";
+    data.currentUserEmail = user?.email || "N/A";
+    data.serviceStatus  = 'pending';
+  
+     // Send the data using Axios POST request
+     axios
+     .post('http://localhost:5000/purchased-items', data)
+     .then((response) => {
+        //  console.log(response.data)
+         Swal.fire({
+             icon: 'success',
+             title: 'Success',
+             text: 'purchasing request has been added successfully!',
+             confirmButtonText: 'OK',
+         });
+         // Reset the form by clearing the state
+        setFormData({
+            serviceTakingDate: "",
+            specialInstructions: "",
+          });
+        })
+     .catch((error) => {
+         Swal.fire({
+             icon: 'error',
+             title: 'Error',
+             text: 'There was an error while adding the service.',
+             confirmButtonText: 'OK',
+         });
+         console.error('Error adding service:', error);
+     });
+  
+    
   };
+  
 
   if (!service) {
     return <p>Service not found</p>;

@@ -42,7 +42,7 @@ const Navbar = () => {
                     </label>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow"
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow dark:bg-gray-900"
                     >
                         <li>
                             <NavLink to="/">Home</NavLink>
@@ -110,7 +110,7 @@ const Navbar = () => {
                             <label tabIndex={0} className="cursor-pointer">Dashboard</label>
                             <ul
                                 tabIndex={0}
-                                className="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow"
+                                className="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow dark:bg-gray-900"
                             >
                                 <li>
                                     <NavLink to="/add-service">Add Service</NavLink>
