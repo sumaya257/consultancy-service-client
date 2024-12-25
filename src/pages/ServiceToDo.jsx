@@ -22,17 +22,16 @@ const ServiceToDo = () => {
     }, [user, setLoading]);
 
     const handleStatusChange = (serviceId, newStatus) => {
+        // Update the backend first
         setLoading(true);
-        // Optimistically update the status in the UI
-        setBooked((prev) =>
-            prev.map((service) =>
-                service._id === serviceId ? { ...service, serviceStatus: newStatus } : service
-            )
-        );
-    
         axios.patch(`http://localhost:5000/servicestodo-items/${serviceId}`, { serviceStatus: newStatus })
             .then((response) => {
-                console.log('Backend response:', response.data);
+                // If successful, update the status in the UI
+                setBooked((prev) =>
+                    prev.map((service) =>
+                        service._id === serviceId ? { ...service, serviceStatus: newStatus } : service
+                    )
+                );
                 setLoading(false);
             })
             .catch((error) => {
@@ -40,6 +39,7 @@ const ServiceToDo = () => {
                 setLoading(false);
             });
     };
+    
     
 
     if (loading) {

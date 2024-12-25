@@ -1,10 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllServices = () => {
-   const services = useLoaderData()
+    const services = useLoaderData();
+    const [searchQuery, setSearchQuery] = useState('');
 
-    if (!services || services.length === 0) {
+    // Filter services based on the search query
+    const filteredServices = services.filter(service =>
+        service.serviceName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    if (!filteredServices || filteredServices.length === 0) {
         return (
             <div className="text-center mt-10">
                 <h2 className="text-2xl font-semibold">No services available</h2>
@@ -14,8 +20,20 @@ const AllServices = () => {
 
     return (
         <div className="max-w-2xl mx-auto p-4">
+            {/* Search Input */}
+            <div className="mb-4">
+                <input
+                    type="text"
+                    className="w-full p-2 border border-gray-300 rounded-lg"
+                    placeholder="Search for services..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </div>
+
+            {/* Services Grid */}
             <div className="grid grid-cols-1 gap-4">
-                {services.map((service) => (
+                {filteredServices.map((service) => (
                     <div key={service._id} className="service-card border p-4 rounded-lg shadow-lg">
                         <img
                             src={service.imageURL}
