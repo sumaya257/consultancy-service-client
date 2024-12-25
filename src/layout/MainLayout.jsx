@@ -12,7 +12,9 @@ const MainLayout = () => {
             <div className=" px-4 rounded-lg my-2 sticky z-10 top-[75px] ">
             <ThemeToggleButton />  {/* Include the Theme Toggle Button here */}
             </div>
+            <div className='min-h-[calc(100vh-312px)]'>
             <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );
