@@ -3,7 +3,7 @@ import { Link, useLoaderData,useParams } from 'react-router-dom';
 
 
 const ServiceDetails = () => {
-    const  services  = useLoaderData(); // Get services from context
+    const  services  = useLoaderData(); // Get services 
     const { id } = useParams();
 
 
