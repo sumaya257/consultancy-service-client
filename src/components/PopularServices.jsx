@@ -4,7 +4,7 @@ import AuthContext from '../context/AuthContext';
 
 const PopularServices = () => {
     const { services } = useContext(AuthContext);
-    console.log(services)
+    // console.log(services)
 
     // Limit to the first 6 services
     const popularServices = services.slice(0, 6);

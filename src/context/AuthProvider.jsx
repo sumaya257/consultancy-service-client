@@ -73,7 +73,7 @@ useEffect(() => {
                 axios
                     .post('http://localhost:5000/jwt', user, { withCredentials: true })
                     .then((res) => {
-                        console.log('JWT token received:', res.data);
+                        // console.log('JWT token received:', res.data);
                         setLoading(false);
                     })
                     .catch((error) => {
@@ -85,7 +85,7 @@ useEffect(() => {
             axios
                 .post('http://localhost:5000/logout', {}, { withCredentials: true })
                 .then((res) => {
-                    console.log(res.data);
+                    
                     setLoading(false);
                 })
                 .catch((error) => {

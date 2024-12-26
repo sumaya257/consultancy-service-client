@@ -44,7 +44,7 @@ const Register = () => {
         .then((result) => {
             const user = result.user;
             setUser(user);
-            console.log('User registered successfully:', user);
+            // console.log('User registered successfully:', user);
             updateUserProfile({
                 displayName: name, photoURL: photo
             }).then(

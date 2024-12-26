@@ -39,7 +39,7 @@ const AddService = () => {
         axiosSecure
             .post('/add-services', serviceData)
             .then((response) => {
-                console.log(response.data)
+                // console.log(response.data)
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',

@@ -19,21 +19,21 @@ const Login = () => {
 
         logInUser(email, password)
             .then(result => {
-                console.log('login', result.user)
+                // console.log('login', result.user)
                 navigate('/')
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
     }
 
     const handleLogInWithGoogle = () => {
         logInWithGoogle()
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
             })
     }
 

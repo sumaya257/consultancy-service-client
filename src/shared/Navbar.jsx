@@ -11,7 +11,7 @@ const Navbar = () => {
         logOutUser()
             .then(() => {
                 navigate('/'); // Redirect to home after logout
-                console.log('Successful logout');
+                // console.log('Successful logout');
             })
             .catch(() => {
                 console.log('Failed to logout');
