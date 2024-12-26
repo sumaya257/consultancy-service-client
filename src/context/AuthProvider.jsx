@@ -71,7 +71,7 @@ useEffect(() => {
                 const user = { email: currentUser.email };
                 // Send the user email to the backend to create a JWT token
                 axios
-                    .post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .post('https://consultation-service-server.vercel.app/jwt', user, { withCredentials: true })
                     .then((res) => {
                         // console.log('JWT token received:', res.data);
                         setLoading(false);
@@ -83,7 +83,7 @@ useEffect(() => {
         } else {
             // Handle logout
             axios
-                .post('http://localhost:5000/logout', {}, { withCredentials: true })
+                .post('https://consultation-service-server.vercel.app/logout', {}, { withCredentials: true })
                 .then((res) => {
                     
                     setLoading(false);
@@ -108,7 +108,7 @@ useEffect(() => {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const response = await fetch('http://localhost:5000/services');
+                const response = await fetch('https://consultation-service-server.vercel.app/services');
                 const data = await response.json();
                 setServices(data); // Set the services data to state
             } catch (error) {

@@ -28,7 +28,7 @@ const ServiceToDo = () => {
     const handleStatusChange = (serviceId, newStatus) => {
         // Update the backend first
         setLoading(true);
-        axios.patch(`http://localhost:5000/servicestodo-items/${serviceId}`, { serviceStatus: newStatus })
+        axios.patch(`https://consultation-service-server.vercel.app/servicestodo-items/${serviceId}`, { serviceStatus: newStatus })
             .then((response) => {
                 // If successful, update the status in the UI
                 setBooked((prev) =>

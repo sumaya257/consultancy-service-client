@@ -50,7 +50,7 @@ const BookNow = () => {
   
      // Send the data using Axios POST request
      axios
-     .post('http://localhost:5000/purchased-items', data)
+     .post('https://consultation-service-server.vercel.app/purchased-items', data)
      .then((response) => {
         //  console.log(response.data)
          Swal.fire({

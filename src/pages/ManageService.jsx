@@ -40,7 +40,7 @@ const ManageService = () => {
     // Handle delete action
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/services/${deleteServiceId}`);
+            await axios.delete(`https://consultation-service-server.vercel.app/services/${deleteServiceId}`);
             setServices(services.filter(service => service._id !== deleteServiceId));
             setShowDeleteModal(false);
         } catch (error) {
@@ -65,7 +65,7 @@ const ManageService = () => {
     <h2 className="text-3xl font-bold mb-4">Manage Your Services</h2>
     
     {/* Conditional rendering for empty services */}
-    
+
     {services.length === 0 ? (
             <p>No services available</p>
         
@@ -114,7 +114,7 @@ const ManageService = () => {
                                 description: e.target.description.value,
                                 price: parseFloat(e.target.price.value),
                             };
-                            await axios.put(`http://localhost:5000/services/${editService._id}`, updatedService);
+                            await axios.put(`https://consultation-service-server.vercel.app/services/${editService._id}`, updatedService);
                             setServices(services.map(service => service._id === editService._id ? updatedService : service));
                             setShowEditModal(false);
                         } catch (error) {

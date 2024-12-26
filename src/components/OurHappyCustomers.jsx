@@ -6,12 +6,12 @@ const OurHappyCustomers = () => {
     {
       name: 'John Doe',
       image: 'https://i.ibb.co.com/QN6H54g/1.jpg',
-      feedback: 'Great service! The business strategy consulting helped us double our revenue in just six months.',
+      feedback: 'Great service! The business strategy consulting helped us double our revenue in just six months..',
     },
     {
       name: 'Jane Smith',
       image: 'https://i.ibb.co.com/sbvFNPM/48.jpg',
-      feedback: 'Amazing experience! I highly recommend their services for any business looking to grow.',
+      feedback: 'Amazing experience! I highly recommend their services for any business looking to grow..',
     },
     {
       name: 'Michael Brown',

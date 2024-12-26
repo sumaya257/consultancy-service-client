@@ -47,12 +47,12 @@ const router = createBrowserRouter([
       {
         path: '/all-services',
         element: <AllServices></AllServices>,
-        loader: () => fetch('http://localhost:5000/services')
+        loader: () => fetch('https://consultation-service-server.vercel.app/services')
       },
       {
         path: '/services/:id',
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/services'),
+        loader: () => fetch('https://consultation-service-server.vercel.app/services'),
       },
       {
         path: '/book-now/:id',

@@ -19,7 +19,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar bg-base-100 sticky top-0 z-10 shadow-md dark:bg-gray-900 text-black dark:text-white">
+        <div className="navbar bg-white sticky top-0 z-10 shadow-md dark:bg-gray-900 text-black dark:text-white">
             {/* Navbar Start */}
             <div className="navbar-start">
                 {/* Mobile Dropdown Menu */}
@@ -45,10 +45,10 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow dark:bg-gray-900"
                     >
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/" replace>Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/services">Services</NavLink>
+                            <NavLink to="/all-services">Services</NavLink>
                         </li>
                         {user && (
                             <li tabIndex={0}>

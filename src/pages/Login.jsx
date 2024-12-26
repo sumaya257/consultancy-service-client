@@ -38,7 +38,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero bg-base-200 min-h-screen dark:bg-gray-900 text-black dark:text-white">
+        <div className="hero  dark:bg-gray-900 dark:text-black text-black min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-96">
                     <Lottie animationData={loginAnimationData}></Lottie>
