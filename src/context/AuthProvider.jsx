@@ -10,6 +10,7 @@ import {
     updateProfile,
 } from 'firebase/auth';
 import auth from '../firebase/firebase.init';
+import axios from 'axios';
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -55,23 +56,52 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     };
 
-    // Observer to track the user's authentication state
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser) {
-                // Set the user with displayName and photoURL
-                setUser({
-                    ...currentUser,
-                    displayName: currentUser.displayName || '',
-                    photoURL: currentUser.photoURL || '',
-                });
-            } else {
-                setUser(null); // Set user to null if not authenticated
+   // Observer to track the user's authentication state
+useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        if (currentUser) {
+            // Set the user with displayName and photoURL
+            setUser({
+                ...currentUser,
+                displayName: currentUser.displayName || '',
+                photoURL: currentUser.photoURL || '',
+            });
+
+            if (currentUser.email) {
+                const user = { email: currentUser.email };
+                // Send the user email to the backend to create a JWT token
+                axios
+                    .post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then((res) => {
+                        console.log('JWT token received:', res.data);
+                        setLoading(false);
+                    })
+                    .catch((error) => {
+                        console.error('Error fetching JWT token:', error);
+                    });
             }
-            setLoading(false); // Ensure loading is false after user state is set
-        });
-        return () => unsubscribe(); // Clean up observer on component unmount
-    }, []);
+        } else {
+            // Handle logout
+            axios
+                .post('http://localhost:5000/logout', {}, { withCredentials: true })
+                .then((res) => {
+                    console.log(res.data);
+                    setLoading(false);
+                })
+                .catch((error) => {
+                    console.error('Error during logout:', error);
+                });
+
+            // Set user to null if not authenticated
+            setUser(null);
+        }
+
+        // Ensure loading is false after user state is set
+        setLoading(false);
+    });
+
+    return () => unsubscribe(); // Clean up observer on component unmount
+}, []);
 
 
     // Fetch services data from the API

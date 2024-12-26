@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import useTitle from '../customHooks/useTitle';
+import useAxiosSecure from '../customHooks/useAxiosSecure';
 
 const ManageService = () => {
     useTitle('Manage Service-Guideline Grove');
@@ -13,11 +14,12 @@ const ManageService = () => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const { user, loading, setLoading } = useContext(AuthContext);
 
+    const axiosSecure = useAxiosSecure()
     // Fetch services when user is available
     useEffect(() => {
         if (user && user.email) {
             setLoading(true);
-            axios.get(`http://localhost:5000/services?email=${user.email}`)
+            axiosSecure.get(`/manage-services?email=${user.email}`)
                 .then((response) => {
                     setServices(response.data);
                     setLoading(false);
