@@ -75,9 +75,6 @@
 - **Future Enhancements**:
   - Integration of advanced role-based authorization (e.g., admin vs. regular users).
   - Adding refresh token functionality for prolonged user sessions.
-- **Contact Information**:
-  - Email: `your-email@example.com`
-  - GitHub: [Your GitHub Profile](https://github.com/your-username)
 
 ---
 
