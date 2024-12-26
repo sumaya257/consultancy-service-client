@@ -1,15 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
+import useAxiosSecure from '../customHooks/useAxiosSecure';
+import useTitle from '../customHooks/useTitle';
 
 const BookedService = () => {
+    useTitle('Booked services - Guideline Grove');
     const [booked, setBooked] = useState([]);
     const { user, loading, setLoading } = useContext(AuthContext);
+    const axiosSecure = useAxiosSecure()
 
     useEffect(() => {
         if (user && user.email) {
             setLoading(true);
-            axios.get(`http://localhost:5000/purchased-items?email=${user.email}`)
+            axiosSecure.get(`/purchased-items?email=${user.email}`)
                 .then((response) => {
                     setBooked(response.data);
                     setLoading(false);
@@ -48,7 +52,7 @@ const BookedService = () => {
 
                             {/* Service Info */}
                             <div className="p-4">
-                                <h3 className="text-lg font-semibold mb-2">{service.serviceName}</h3>
+                                <h3 className="text-lg font-semibold mb-2 dark:text-black">{service.serviceName}</h3>
                                 <p className="text-gray-700 mb-1">
                                     <strong>Price:</strong> ${service.servicePrice}
                                 </p>

@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData,useParams } from 'react-router-dom';
+import useTitle from '../customHooks/useTitle';
 
 
 const ServiceDetails = () => {
+    useTitle('Details - Guideline Grove');
     const  services  = useLoaderData(); // Get services 
     const { id } = useParams();
 

@@ -1,7 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import useTitle from '../customHooks/useTitle';
 
 const AllServices = () => {
+    useTitle('Services - Guideline Grove');
     const services = useLoaderData();
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -9,11 +11,18 @@ const AllServices = () => {
     const filteredServices = services.filter(service =>
         service.serviceName.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
+    const navigate = useNavigate();
     if (!filteredServices || filteredServices.length === 0) {
         return (
             <div className="text-center mt-10">
                 <h2 className="text-2xl font-semibold">No services available</h2>
+
+                <button
+                    onClick={() => navigate(-1)}
+                    className="btn btn-primary mt-4"
+                >
+                    Go Back
+                </button>
             </div>
         );
     }
@@ -24,7 +33,7 @@ const AllServices = () => {
             <div className="mb-4">
                 <input
                     type="text"
-                    className="w-full p-2 border border-gray-300 rounded-lg"
+                    className="w-full p-2 border border-gray-300 dark:text-black rounded-lg"
                     placeholder="Search for services..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}

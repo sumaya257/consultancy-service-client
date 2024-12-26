@@ -4,7 +4,7 @@ import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/fre
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-6">
+        <footer className="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-6 mt-10">
             <div className="container mx-auto px-6">
                 {/* Website Name and Copyright */}
                 <div className="text-center mb-4">

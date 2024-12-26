@@ -50,7 +50,7 @@ const OurHappyCustomers = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+              className=" p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05 }}
@@ -63,7 +63,7 @@ const OurHappyCustomers = () => {
                   className="w-16 h-16 rounded-full mr-4"
                 />
                 <div>
-                  <h3 className="font-semibold text-lg text-gray-800">{testimonial.name}</h3>
+                  <h3 className="font-semibold text-lg text-gray-800 dark:text-white">{testimonial.name}</h3>
                 </div>
               </div>
               <p className="text-gray-600">{testimonial.feedback}</p>

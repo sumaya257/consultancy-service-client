@@ -1,15 +1,19 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
+import useAxiosSecure from '../customHooks/useAxiosSecure';
+import useTitle from '../customHooks/useTitle';
 
 const ServiceToDo = () => {
+    useTitle('Service ToDo - Guideline Grove');
     const [booked, setBooked] = useState([]);
     const { user, loading, setLoading } = useContext(AuthContext);
+    const axiosSecure = useAxiosSecure()
 
     useEffect(() => {
         if (user && user.email) {
             setLoading(true);
-            axios.get(`http://localhost:5000/servicestodo-items?email=${user.email}`)
+            axiosSecure.get(`/servicestodo-items?email=${user.email}`)
                 .then((response) => {
                     setBooked(response.data);
                     setLoading(false);
@@ -55,7 +59,7 @@ const ServiceToDo = () => {
         <div className='p-4'>
             <h2 className="text-2xl font-bold mb-6">My Services</h2>
             {booked.length === 0 ? (
-                <p>No booked services available.</p>
+                <p>No booked services available to delivered..</p>
             ) : (
                 <div className="grid md:grid-cols-2 gap-4">
 
@@ -79,7 +83,7 @@ const ServiceToDo = () => {
                             <select
                                 value={service.serviceStatus}
                                 onChange={(e) => handleStatusChange(service._id, e.target.value)}
-                                className="border rounded px-2 py-1 mt-2"
+                                className="border dark:bg-black rounded px-2 py-1 mt-2"
                             >
                                 <option value="pending">Pending</option>
                                 <option value="working">Working</option>

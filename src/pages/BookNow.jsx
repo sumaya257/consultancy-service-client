@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import useTitle from '../customHooks/useTitle';
 
 const BookNow = () => {
+  useTitle('Book Now - Guideline Grove');
   const { id } = useParams(); // Get the service id from URL
   const { services, user } = useContext(AuthContext); // Get services and currentUser from context
 

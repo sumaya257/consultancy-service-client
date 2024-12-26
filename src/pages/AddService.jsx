@@ -2,9 +2,13 @@ import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import AuthContext from '../context/AuthContext';
+import useAxiosSecure from '../customHooks/useAxiosSecure';
+import useTitle from '../customHooks/useTitle';
 
 const AddService = () => {
+    useTitle('Add service - Guideline Grove');
     const { user } = useContext(AuthContext); // Get user info from AuthContext
+    const axiosSecure = useAxiosSecure()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,8 +36,8 @@ const AddService = () => {
         }
 
         // Send the data using Axios POST request
-        axios
-            .post('http://localhost:5000/services', serviceData)
+        axiosSecure
+            .post('/add-services', serviceData)
             .then((response) => {
                 console.log(response.data)
                 Swal.fire({
