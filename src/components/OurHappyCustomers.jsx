@@ -22,7 +22,7 @@ const OurHappyCustomers = () => {
 
   return (
     <div className="my-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           className="text-3xl font-semibold text-center text-gray-900 dark:text-white mb-8"
           initial={{ opacity: 0 }}

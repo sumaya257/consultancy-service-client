@@ -4,6 +4,8 @@ import Banner from '../components/Banner';
 import useTitle from '../customHooks/useTitle';
 import PopularServices from '../components/PopularServices';
 import OurHappyCustomers from '../components/OurHappyCustomers';
+import HowItWorks from '../components/HowItWorks';
+import ContactUs from '../components/ContactUs';
 
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
             <AboutUs></AboutUs>
             <PopularServices></PopularServices>
             <OurHappyCustomers></OurHappyCustomers>
+            <HowItWorks></HowItWorks>
+            <ContactUs></ContactUs>
         </div>
     );
 };

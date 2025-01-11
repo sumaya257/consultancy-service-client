@@ -7,6 +7,7 @@ import useTitle from '../customHooks/useTitle';
 const ServiceToDo = () => {
     useTitle('Service ToDo - Guideline Grove');
     const [booked, setBooked] = useState([]);
+    console.log(booked)
     const { user, loading, setLoading } = useContext(AuthContext);
     const axiosSecure = useAxiosSecure()
 
@@ -26,14 +27,15 @@ const ServiceToDo = () => {
     }, [user, setLoading]);
 
     const handleStatusChange = (serviceId, newStatus) => {
+        console.log({ status: newStatus })
         // Update the backend first
         setLoading(true);
-        axios.patch(`https://consultation-service-server.vercel.app/servicestodo-items/${serviceId}`, { serviceStatus: newStatus })
+        axios.patch(`https://consultation-service-server.vercel.app/servicestodo-items/${serviceId}`, { status: newStatus })
             .then((response) => {
                 // If successful, update the status in the UI
                 setBooked((prev) =>
                     prev.map((service) =>
-                        service._id === serviceId ? { ...service, serviceStatus: newStatus } : service
+                        service._id === serviceId ? { ...service, status: newStatus } : service
                     )
                 );
                 setLoading(false);
@@ -75,13 +77,13 @@ const ServiceToDo = () => {
                                 Service Instructions: <span className="font-normal">{service.serviceInstructions || "No Instructions Provided"}</span>
                             </h3>
 
-                            <p className={`font-normal ${service.serviceStatus === "pending" ? "text-yellow-500" : service.serviceStatus === "working" ? "text-green-500" : "text-red-500"}`}>
-                                Status: {service.serviceStatus}
+                            <p className={`font-normal ${service.status === "pending" ? "text-yellow-500" : service.status === "working" ? "text-green-500" : "text-red-500"}`}>
+                                Status: {service.status}
                             </p>
 
                             {/* Dropdown for status change */}
                             <select
-                                value={service.serviceStatus}
+                                value={service.status}
                                 onChange={(e) => handleStatusChange(service._id, e.target.value)}
                                 className="border dark:bg-black rounded px-2 py-1 mt-2"
                             >

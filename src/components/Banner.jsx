@@ -37,7 +37,7 @@ const Banner = () => {
     }, []);
 
     return (
-        <div className="relative w-full h-[500px] overflow-hidden bg-white dark:bg-gray-900 text-black dark:text-white">
+        <div className="relative w-full h-[400px] overflow-hidden bg-white dark:bg-gray-900 text-black dark:text-white">
             {/* Slider Container */}
             <div className="absolute inset-0">
                 {/* Image Slider */}
