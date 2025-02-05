@@ -64,7 +64,7 @@
 
 ## 🚀 <span style="color: #009688;">How to Run the Project Locally</span> <i class="fas fa-terminal"></i>
 
-1. Clone the repository:
+ Clone the repository:
    ```bash
    git clone <repo_url>
    cd consultation-service-client
