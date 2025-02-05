@@ -3,14 +3,14 @@
 ## Live Site URL
 [Visit the Website](https://consultation-service-27d2a.web.app/)
 
-## Selected Category: Category 2 (consultancy)
+## Selected Category: (consultancy)
 
 ---
 
 ## Features of the Website
 - **Responsive Design**: Fully responsive layout optimized for mobile, tablet, and desktop devices.
 - **User Authentication with JWT**: Secure authentication flow using JSON Web Tokens (JWT) for user login and session management.
-- **Cookies for Token Storage**: Tokens are securely stored in HTTP-only cookies to protect against  attacks .
+- **Cookies for Token Storage**: Tokens are securely stored in HTTP-only cookies to protect against attacks.
 - **Dynamic Routing**: Utilizes React Router for dynamic paths and private routes accessible only after user authentication.
 - **Interactive UI Components**: Includes a visually appealing carousel, modals, tabs, and category-based filtering to enhance user engagement.
 - **Category-Specific Features**: Provides customized experiences and content for the selected category (Category 2).
@@ -36,46 +36,61 @@
 ---
 
 ## Authentication Flow (JWT with Cookies)
-1. **User Login**:
-   - Users log in by entering their credentials (email and password).
-   - The backend validates the credentials and generates a signed JWT token.
-   - The token is sent back to the frontend and stored in an HTTP-only cookie.
-
-2. **Accessing Protected Routes**:
-   - The cookie containing the JWT is sent with every request to the server.
-   - The backend verifies the token and grants access to protected resources or pages.
-
-3. **Logout**:
-   - Logging out clears the cookie on the client side, effectively ending the session.
-
-4. **Security Features**:
-   - **HTTP-Only Cookies**: Ensures tokens cannot be accessed via JavaScript, reducing XSS risks.
-   - **Token Expiration**: JWT tokens are configured with an expiration time to prevent indefinite sessions.
-   - **Role-Based Access**: Certain routes or features are restricted based on user roles (if implemented).
+1. **User Login**: Users log in by entering their credentials (email and password).
+2. **Accessing Protected Routes**: The cookie containing the JWT is sent with every request to the server.
+3. **Logout**: Logging out clears the cookie on the client side, effectively ending the session.
+4. **Security Features**: Includes HTTP-only cookies, token expiration, and role-based access.
 
 ---
 
-## Technologies for JWT and Cookies
-- **jsonwebtoken**: To sign and verify JWT tokens.
-- **cookie-parser**: For parsing cookies on the server side.
-- **dotenv**: To manage environment variables securely (e.g., secret keys for signing tokens).
+## Future Enhancements
+- **Advanced Role-Based Access Control (RBAC)**
+- **Refresh Token Implementation**
+- **User Profile Management**
+- **Search Functionality**
+- **Real-time Features with WebSockets**
+- **Mobile App Integration**
+- **Payment Gateway Integration**
+- **Advanced Analytics**
+- **Rating and Reviews System**
+- **SEO Optimization**
+- **Email Notifications**
+- **Data Backup and Restore**
+- **Multi-language Support**
+- **Service Scheduling Integration**
+- **Accessibility Improvements**
+- **Performance Optimization**
+- **Progressive Web App (PWA)**
 
 ---
 
-## API Highlights
-- **Authentication Endpoints**:
-  - `POST /login`: Authenticates the user and generates a JWT stored in cookies.
-  - `GET /protected`: Example of a route accessible only with a valid token.
-- **Category-Specific Content**:
-  - `GET /categories/:id`: Returns data for a specific category.
+## Dependencies
+
+### Client-Side Dependencies:
+- **React**, **Tailwind CSS**, **React Router**, **Axios**, **FontAwesome**, **Lottie React**
+
+### Development Dependencies:
+- **Vite**, **ESLint**, **DaisyUI**, **PostCSS**, **Prettier**
 
 ---
 
-## Additional Information
-- **Future Enhancements**:
-  - Integration of advanced role-based authorization (e.g., admin vs. regular users).
-  - Adding refresh token functionality for prolonged user sessions.
+## How to Run the Project Locally
 
----
+1. Clone the repository:
+   ```bash
+   git clone <repo_url>
+   cd consultation-service-client
+Install the dependencies:
 
-Thank you! 😊
+bash
+Copy
+Edit
+npm install
+Run the development server:
+
+bash
+Copy
+Edit
+npm run dev
+Visit http://localhost:5173 to view the project in your browser.
+
