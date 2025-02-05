@@ -64,20 +64,23 @@
 
 ## 🚀 <span style="color: #009688;">How to Run the Project Locally</span> <i class="fas fa-terminal"></i>
 
- Clone the repository:
-   ```bash
-   git clone <repo_url>
-   cd consultation-service-client
-Install the dependencies:
-
-bash
-Copy
-Edit
+## 1️⃣ **Clone the Repository**
+```sh
+git clone https://github.com/sumaya257/consultancy-service-client.git
+cd AdoptNest
+2️⃣ Install Dependencies
+sh
+Copy code
 npm install
-Run the development server:
+3️⃣ Configure Environment Variables
+Create a .env file in the root directory and add the following:
 
-bash
-Copy
-Edit
+sh
+Copy code
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
+4️⃣ Start the Development Server
+sh
+Copy code
 npm run dev
-Visit http://localhost:5173 to view the project in your browser.
