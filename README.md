@@ -1,32 +1,29 @@
-# Guideline Grove
+# <span style="color: #4CAF50;">Guideline Grove</span> <i class="fas fa-leaf"></i>
 
-## Live Site URL
+## <span style="color: #2196F3;">Live Site URL</span> <i class="fas fa-link"></i>
 [Visit the Website](https://consultation-service-27d2a.web.app/)
-
-## Selected Category: (consultancy)
 
 ---
 
-## Features of the Website
+## <span style="color: #FF5722;">Features of the Website</span> <i class="fas fa-cogs"></i>
 - **Responsive Design**: Fully responsive layout optimized for mobile, tablet, and desktop devices.
 - **User Authentication with JWT**: Secure authentication flow using JSON Web Tokens (JWT) for user login and session management.
 - **Cookies for Token Storage**: Tokens are securely stored in HTTP-only cookies to protect against attacks.
 - **Dynamic Routing**: Utilizes React Router for dynamic paths and private routes accessible only after user authentication.
 - **Interactive UI Components**: Includes a visually appealing carousel, modals, tabs, and category-based filtering to enhance user engagement.
-- **Category-Specific Features**: Provides customized experiences and content for the selected category (Category 2).
 - **Real-Time Updates**: Implements features like cart and wishlist functionality with local storage or server-side integration.
 
 ---
 
-## Technologies Used
+## <span style="color: #009688;">Technologies Used</span> <i class="fas fa-code"></i>
 
-### Frontend
+### <span style="color: #FF5722;">Frontend</span> <i class="fas fa-laptop-code"></i>
 - **React**: For building the user interface with reusable components.
 - **Tailwind CSS**: For responsive, utility-first styling.
 - **React Router**: For seamless navigation and dynamic routing.
 - **Axios**: For handling API requests and managing client-server communication.
 
-### Backend
+### <span style="color: #FF5722;">Backend</span> <i class="fas fa-server"></i>
 - **Node.js**: For building the server-side application.
 - **Express.js**: For routing and API creation.
 - **MongoDB**: For storing and managing application data.
@@ -35,7 +32,7 @@
 
 ---
 
-## Authentication Flow (JWT with Cookies)
+## <span style="color: #3F51B5;">Authentication Flow (JWT with Cookies)</span> <i class="fas fa-lock"></i>
 1. **User Login**: Users log in by entering their credentials (email and password).
 2. **Accessing Protected Routes**: The cookie containing the JWT is sent with every request to the server.
 3. **Logout**: Logging out clears the cookie on the client side, effectively ending the session.
@@ -43,38 +40,29 @@
 
 ---
 
-## Future Enhancements
+## <span style="color: #607D8B;">Future Enhancements</span> <i class="fas fa-arrow-up"></i>
 - **Advanced Role-Based Access Control (RBAC)**
-- **Refresh Token Implementation**
-- **User Profile Management**
-- **Search Functionality**
-- **Real-time Features with WebSockets**
-- **Mobile App Integration**
 - **Payment Gateway Integration**
-- **Advanced Analytics**
-- **Rating and Reviews System**
 - **SEO Optimization**
 - **Email Notifications**
-- **Data Backup and Restore**
 - **Multi-language Support**
 - **Service Scheduling Integration**
 - **Accessibility Improvements**
 - **Performance Optimization**
-- **Progressive Web App (PWA)**
 
 ---
 
-## Dependencies
+## <span style="color: #4CAF50;">Dependencies</span> <i class="fas fa-box"></i>
 
-### Client-Side Dependencies:
+### <span style="color: #FF5722;">Client-Side Dependencies:</span> <i class="fas fa-puzzle-piece"></i>
 - **React**, **Tailwind CSS**, **React Router**, **Axios**, **FontAwesome**, **Lottie React**
 
-### Development Dependencies:
+### <span style="color: #FF5722;">Development Dependencies:</span> <i class="fas fa-tools"></i>
 - **Vite**, **ESLint**, **DaisyUI**, **PostCSS**, **Prettier**
 
 ---
 
-## How to Run the Project Locally
+## <span style="color: #009688;">How to Run the Project Locally</span> <i class="fas fa-terminal"></i>
 
 1. Clone the repository:
    ```bash
@@ -93,4 +81,3 @@ Copy
 Edit
 npm run dev
 Visit http://localhost:5173 to view the project in your browser.
-
