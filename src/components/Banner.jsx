@@ -6,15 +6,15 @@ const Banner = () => {
 
     const slides = [
         {
-            image: "https://i.ibb.co/HXJfZkb/istockphoto-2174096199-1024x1024.jpg", 
+            image: "https://i.ibb.co.com/hZ9jh4g/young-employees-sitting-office-table-using-laptop-team-work-brainstorming-meeting-concept.jpg", 
             text: "Personalized Consultancy for Your Success",
         },
         {
-            image: "https://i.ibb.co/BBHL7Gn/istockphoto-2169210261-1024x1024.jpg", 
+            image: "https://i.ibb.co.com/518bmhF/businessman-showing-changes-report.jpg", 
             text: "Professional Guidance for Every Step of Your Journey",
         },
         {
-            image: "https://i.ibb.co/f9pHSVQ/istockphoto-1035886582-1024x1024.jpg", 
+            image: "https://i.ibb.co.com/kQ7DQSf/modern-equipped-computer-lab.jpg", 
             text: "Transforming Ideas into Actionable Strategies",
         },
     ];

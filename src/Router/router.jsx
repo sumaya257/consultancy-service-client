@@ -13,6 +13,7 @@ import BookNow from "../pages/BookNow";
 import ServiceToDo from "../pages/ServiceToDo";
 import BookedService from "../pages/BookedService";
 import PrivateRoute from "./PrivateRoute";
+import FAQ from "../pages/FAQ";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,11 @@ const router = createBrowserRouter([
         path: '/service-todo',
         element: <ServiceToDo></ServiceToDo>
       },
+      {
+        path: '/faq',
+        element: <FAQ></FAQ>
+      },
+
 
     ]
   },

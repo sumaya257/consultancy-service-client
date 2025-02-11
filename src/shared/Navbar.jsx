@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import logo from '../assets/logo.png';
+import ThemeToggleButton from '../components/ThemeToggoleButton';
 
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext);
@@ -19,7 +20,8 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar bg-white sticky top-0 z-10 shadow-md dark:bg-gray-900 text-black dark:text-white">
+        <div className="navbar max-w-7xl mx-auto bg-white sticky top-0 z-10 shadow-md dark:bg-gray-900 text-black dark:text-white">
+          
             {/* Navbar Start */}
             <div className="navbar-start">
                 {/* Mobile Dropdown Menu */}
@@ -50,6 +52,9 @@ const Navbar = () => {
                         <li>
                             <NavLink to="/all-services">Services</NavLink>
                         </li>
+                        <li>
+                        <NavLink to="/faq">FAQ</NavLink>
+                    </li>
                         {user && (
                             <li tabIndex={0}>
                                 <details>
@@ -105,6 +110,9 @@ const Navbar = () => {
                     <li>
                         <NavLink to="/all-services">Services</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/faq">FAQ</NavLink>
+                    </li>
                     {user && (
                         <li tabIndex={0} className="dropdown dropdown-hover">
                             <label tabIndex={0} className="cursor-pointer">Dashboard</label>
@@ -132,6 +140,7 @@ const Navbar = () => {
 
             {/* Navbar End */}
             <div className="navbar-end items-center gap-4 hidden md:flex">
+                <ThemeToggleButton></ThemeToggleButton>
                 {user ? (
                     <div className="flex items-center gap-2">
                         {/* User Profile Picture */}
