@@ -27,7 +27,7 @@ const Contact = () => {
         };
     
     return (
-        <div className="bg-gray-100 dark:bg-gray-800 dark:text-white min-h-screen py-12 px-6 sm:px-12">
+        <div className="bg-gray-100 dark:bg-gray-900 dark:text-gray-800 min-h-screen py-12 px-6 sm:px-12">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-semibold text-gray-800 dark:text-white">Contact Us</h2>
@@ -39,7 +39,7 @@ const Contact = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Contact Form */}
                     <div className="bg-white p-8 rounded-lg shadow-lg">
-                        <h3 className="text-3xl font-semibold text-gray-800 dark:text-white mb-6">Send Us a Message</h3>
+                        <h3 className="text-3xl font-semibold text-gray-800 dark:text-gray-800  mb-6">Send Us a Message</h3>
                         <form onSubmit={handleSubmit}>
                 <div className="form-control mb-4">
                     <label htmlFor="name" className="label">
@@ -84,9 +84,9 @@ const Contact = () => {
 
                 <button
                     type="submit"
-                    className="btn btn-primary w-32 mt-4 mx-auto"
+                    className="btn bg-blue-500 text-white w-32 mt-4 mx-auto"
                 >
-                    Send
+                    Submit
                 </button>
             </form>
                     </div>

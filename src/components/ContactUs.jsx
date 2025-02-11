@@ -73,7 +73,7 @@ const ContactUs = () => {
 
                 <button
                     type="submit"
-                    className="btn btn-primary w-32 mt-4 mx-auto"
+                    className="btn bg-blue-500 text-white w-32 mt-4 mx-auto"
                 >
                     Submit
                 </button>
