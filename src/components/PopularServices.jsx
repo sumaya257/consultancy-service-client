@@ -7,7 +7,7 @@ const PopularServices = () => {
     // console.log(services)
 
     // Limit to the first 6 services
-    const popularServices = services.slice(4, 8);
+    const popularServices = services.slice(1, 5);
 
     return (
         <div className="max-w-8xl mx-auto p-4">
