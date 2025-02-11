@@ -32,6 +32,7 @@ const Login = () => {
             .then(result => {
                 // console.log(result.user)
                 navigate('/')
+                
             })
             .catch(error => {
                 // console.log(error.message)
@@ -39,14 +40,14 @@ const Login = () => {
     }
 
     return (
-        <div className="hero  dark:bg-gray-900 dark:text-black text-black min-h-screen">
+        <div className="hero  dark:bg-gray-900 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left w-96">
                     <Lottie animationData={loginAnimationData}></Lottie>
                 </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <h1 className="text-5xl font-bold ml-5 mt-4 text-center dark:text-black">Login</h1>
-                    <form onSubmit={handleLogin} className="card-body">
+                <div className="card bg-gray-100 dark:text-gray-800  w-full max-w-sm shrink-0 shadow-2xl">
+                    <h1 className="text-5xl font-bold ml-5 mt-4 text-center">Login</h1>
+                    <form onSubmit={handleLogin} className="card-body dark:text-red-400 text-white">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
