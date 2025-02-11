@@ -34,7 +34,7 @@ const AboutUs = () => {
                     About Us
                 </motion.h2>
 
-                <p className="text-lg text-gray-600 mb-6">
+                <p className="text-lg text-gray-600 dark:text-white mb-6">
                     Welcome to our consultation service! We are dedicated to providing the best guidance and support tailored to your needs. Our experienced professionals ensure that you achieve success in every step of your journey with us. Let's build a better future together!
                 </p>
 

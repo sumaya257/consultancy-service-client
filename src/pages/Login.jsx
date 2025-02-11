@@ -92,7 +92,7 @@ const Login = () => {
 
 
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn bg-blue-500 text-white">Login</button>
                         </div>
 
                         <p className="text-center text-gray-500 mt-4">

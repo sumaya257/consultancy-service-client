@@ -33,7 +33,7 @@ const AllServices = () => {
             <div className="mb-4">
                 <input
                     type="text"
-                    className="w-full p-2 border border-gray-300 dark:text-black rounded-lg"
+                    className="w-full p-2 border border-gray-300 dark:text-white text-white rounded-lg"
                     placeholder="Search for services..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
