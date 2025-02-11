@@ -20,7 +20,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar max-w-7xl mx-auto bg-white sticky top-0 z-10 shadow-md dark:bg-gray-900 text-black dark:text-white">
+        <div className="navbar max-w-7xl mx-auto bg-white sticky top-0 z-10 dark:bg-gray-900 text-black dark:text-white">
           
             {/* Navbar Start */}
             <div className="navbar-start">
@@ -54,6 +54,9 @@ const Navbar = () => {
                         </li>
                         <li>
                         <NavLink to="/faq">FAQ</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact">Contact Us</NavLink>
                     </li>
                         {user && (
                             <li tabIndex={0}>
@@ -112,6 +115,9 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink to="/faq">FAQ</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact">Contact Us</NavLink>
                     </li>
                     {user && (
                         <li tabIndex={0} className="dropdown dropdown-hover">
