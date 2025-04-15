@@ -126,7 +126,7 @@ const ManageService = () => {
                         type="text"
                         name="imageURL"
                         defaultValue={editService.imageURL}
-                        className="w-full p-2 mb-4 border rounded"
+                        className="w-full p-2 mb-4 border rounded bg-gray-100  text-black"
                         placeholder="Service Image URL"
                         required
                     />
@@ -135,7 +135,7 @@ const ManageService = () => {
                         type="text"
                         name="serviceName"
                         defaultValue={editService.serviceName}
-                        className="w-full p-2 mb-4 border rounded"
+                        className="w-full p-2 mb-4 border rounded bg-gray-100  text-black"
                         placeholder="Service Name"
                         required
                     />
@@ -143,14 +143,14 @@ const ManageService = () => {
                         type="number"
                         name="price"
                         defaultValue={editService.price}
-                        className="w-full p-2 mb-4 border rounded"
+                        className="w-full p-2 mb-4 border rounded bg-gray-100  text-black"
                         placeholder="Price"
                         required
                     />
                     <textarea
                         name="description"
                         defaultValue={editService.description}
-                        className="w-full p-2 mb-4 border rounded"
+                        className="w-full p-2 mb-4 border rounded bg-gray-100  text-black"
                         placeholder="Description"
                         required
                     />
@@ -161,7 +161,7 @@ const ManageService = () => {
                             onClick={() => setShowEditModal(false)}
                         >
                             Cancel
-                        </button>
+                        </button> 
                         <button type="submit" className="btn btn-primary">Save</button>
                     </div>
                 </form>
@@ -171,8 +171,8 @@ const ManageService = () => {
 
     {/* Delete Confirmation Modal */}
     {showDeleteModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center  text-black">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-4">Confirm Delete</h3>
                 <p>Are you sure you want to delete this service?</p>
                 <div className="flex justify-end mt-4">

@@ -71,7 +71,7 @@ const AddService = () => {
                     <input
                         name="imageURL"
                         type="text"
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full  bg-gray-100  text-black"
                         placeholder="Enter image URL"
                     />
                 </div>
@@ -82,7 +82,7 @@ const AddService = () => {
                     <input
                         name="serviceName"
                         type="text"
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full bg-gray-100  text-black"
                         placeholder="Enter service name"
                     />
                 </div>
@@ -93,7 +93,7 @@ const AddService = () => {
                     <input
                         name="price"
                         type="number"
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full bg-gray-100  text-black"
                         placeholder="Enter price"
                     />
                 </div>
@@ -103,7 +103,7 @@ const AddService = () => {
                     <label className="label">Service Area</label>
                     <select
                         name="serviceArea"
-                        className="select select-bordered w-full"
+                        className="select select-bordered w-full bg-gray-100  text-black"
                     >
                         <option value="" disabled>Select the Service Area</option>
                         <option value="Dhaka">Dhaka</option>
@@ -121,7 +121,7 @@ const AddService = () => {
                     <label className="label">Description</label>
                     <textarea
                         name="description"
-                        className="textarea textarea-bordered w-full"
+                        className="textarea textarea-bordered w-full bg-gray-100  text-black"
                         placeholder="Enter description"
                     ></textarea>
                 </div>

@@ -48,7 +48,7 @@ const Contact = () => {
                     <input
                         type="text"
                         id="name"
-                        className="input input-bordered w-full bg-white dark:bg-gray-800"
+                        className="input input-bordered w-full bg-white  dark:bg-gray-100  dark:text-black"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
@@ -62,7 +62,7 @@ const Contact = () => {
                     <input
                         type="email"
                         id="email"
-                        className="input input-bordered w-full  bg-white dark:bg-gray-800"
+                        className="input input-bordered w-full  bg-white  dark:bg-gray-100  dark:text-black"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -75,7 +75,7 @@ const Contact = () => {
                     </label>
                     <textarea
                         id="message"
-                        className="textarea textarea-bordered w-full  bg-white dark:bg-gray-800"
+                        className="textarea textarea-bordered w-full  bg-white dark:bg-gray-100  dark:text-black"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required

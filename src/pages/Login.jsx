@@ -57,6 +57,7 @@ const Login = () => {
                                 type="email"
                                 placeholder="Email"
                                 className="input input-bordered"
+                                 defaultValue="Tanna27@gmail.com"
                                 required
                             />
                         </div>
@@ -72,6 +73,7 @@ const Login = () => {
                                     type={passwordVisible ? 'text' : 'password'}
                                     placeholder="Enter your password"
                                     className="input input-bordered pr-10"
+                                    defaultValue="Tanna180927"
                                     required
                                 />
                                 <button

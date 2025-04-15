@@ -18,7 +18,7 @@ const AllServices = () => {
                 <h2 className="text-2xl font-semibold">No services available</h2>
 
                 <button
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate(0)}
                     className="btn btn-primary mt-4"
                 >
                     Go Back
@@ -33,7 +33,7 @@ const AllServices = () => {
             <div className="mb-4">
                 <input
                     type="text"
-                    className="w-full p-2 border border-gray-300 dark:text-white text-white rounded-lg"
+                    className="w-full p-2 border border-gray-300 bg-gray-100  text-black rounded-lg"
                     placeholder="Search for services..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -43,7 +43,7 @@ const AllServices = () => {
             {/* Services Grid */}
             <div className="grid grid-cols-1 gap-4">
                 {filteredServices.map((service) => (
-                    <div key={service._id} className="service-card border p-4 rounded-lg shadow-lg">
+                    <div key={service._id} className="service-card border p-4 rounded-lg shadow-lg  dark:bg-gray-100  dark:text-black">
                         <img
                             src={service.imageURL}
                             alt={service.serviceName}

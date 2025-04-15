@@ -61,7 +61,7 @@ const Navbar = () => {
                         {user && (
                             <li tabIndex={0}>
                                 <details>
-                                    <summary className="cursor-pointer">Dashboard</summary>
+                                    <summary className="cursor-pointer ">Dashboard</summary>
                                     <ul className="p-2">
                                         <li>
                                             <NavLink to="/add-service">Add Service</NavLink>
@@ -124,7 +124,7 @@ const Navbar = () => {
                             <label tabIndex={0} className="cursor-pointer">Dashboard</label>
                             <ul
                                 tabIndex={0}
-                                className="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow dark:bg-gray-900"
+                                className="dropdown-content menu bg-gray-100 rounded-box w-52 p-2 shadow dark:bg-gray-900"
                             >
                                 <li>
                                     <NavLink to="/add-service">Add Service</NavLink>

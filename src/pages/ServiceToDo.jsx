@@ -85,7 +85,7 @@ const ServiceToDo = () => {
                             <select
                                 value={service.status}
                                 onChange={(e) => handleStatusChange(service._id, e.target.value)}
-                                className="border dark:bg-black rounded px-2 py-1 mt-2"
+                                className="border bg-gray-100  text-black rounded px-2 py-1 mt-2"
                             >
                                 <option value="pending">Pending</option>
                                 <option value="working">Working</option>
