@@ -11,7 +11,8 @@ const PopularServices = () => {
 
     return (
         <div className="max-w-8xl mx-auto p-4">
-            <h2 className="text-3xl font-bold mb-6">Popular Services</h2>
+            <h2 className="text-3xl font-semibold text-center
+             mb-6">Popular Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {popularServices.map((service) => (
                     <div key={service._id} className="service-card border p-3 rounded-lg shadow-lg  dark:bg-gray-100">
